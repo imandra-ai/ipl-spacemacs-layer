@@ -8,30 +8,28 @@
 - [[#description][Description]]
   - [[#features][Features:]]
 - [[#install][Install]]
-- [[#key-bindings][Key bindings]]
 
 * Description
-This layer adds support for something.
+This layer adds support for the Imandra Protocol Language.
 
 ** Features:
   - Autocomplete
   - Lint
-  - Refactor
-  - ...
+  - Syntax highlighting
 
 * Install
+
+#+BEGIN_SRC bash
+git clone git@github.com:mattjbray/ipl-spacemacs-layer ~/.emacs.d/private/ipl
+#+END_SRC
+
+
 To use this configuration layer, add it to your =~/.spacemacs=. You will need to
 add =ipl= to the existing =dotspacemacs-configuration-layers= list in this
 file.
 
-* Key bindings
-
-| Key Binding | Description    |
-|-------------+----------------|
-| ~SPC x x x~ | Does thing01   |
-
-# Use GitHub URLs if you wish to link a Spacemacs documentation file or its heading.
-# Examples:
-# [[https://github.com/syl20bnr/spacemacs/blob/master/doc/VIMUSERS.org#sessions]]
-# [[https://github.com/syl20bnr/spacemacs/blob/master/layers/%2Bfun/emoji/README.org][Link to Emoji layer README.org]]
-# If space-doc-mode is enabled, Spacemacs will open a local copy of the linked file.
+#+BEGIN_SRC emacs-lisp
+  (setq-default dotspacemacs-configuration-layers
+  '((ipl :variables
+         ipl-path-to-language-server "~/code/ai/ipl/fixdsl-vscode/xtext-server/bin/fixdsl-server")))
+#+END_SRC
