@@ -78,7 +78,7 @@ Each entry is either:
       (lsp-define-stdio-client 'ipl-mode "ipl" 'stdio
                                #'(lambda () default-directory)
                                "Imandra Protocol Language Language Server"
-                               "/Users/mattjbray/code/ai/ipl/fixdsl-vscode/xtext-server/bin/fixdsl-server"
+                               ipl-path-to-language-server
                                )
       (spacemacs/set-leader-keys-for-major-mode 'ipl-mode "gg" 'xref-find-definitions)
       )
