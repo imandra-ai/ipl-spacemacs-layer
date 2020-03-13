@@ -8,6 +8,7 @@
 - [[#description][Description]]
   - [[#features][Features:]]
 - [[#install][Install]]
+- [[#install-without-spacemacs][Install (without spacemacs)]]
 
 * Description
 This layer adds support for the Imandra Protocol Language.
@@ -33,4 +34,15 @@ file.
     '((ipl :variables
            ipl-path-to-language-server "~/code/ai/ipl/ipl-vscode/xtext-server/bin/ipl-server"
            ipl-java-home "/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home")))
+#+END_SRC
+
+
+* Install (without spacemacs)
+
+#+BEGIN_SRC emacs-lisp
+  (use-package ipl-mode
+    :mode "\\.ipl\\'"
+    :custom
+    (ipl-path-to-language-server "~/code/ai/ipl/ipl-vscode/xtext-server/bin/ipl-server")
+    (ipl-java-home "/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"))
 #+END_SRC

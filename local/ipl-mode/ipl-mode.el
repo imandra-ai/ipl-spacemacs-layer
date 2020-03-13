@@ -117,8 +117,6 @@
             (,(regexp-opt ipl-keywords 'word) . font-lock-keyword-face)))
     (setq font-lock-defaults '(ipl-highlights))))
 
-;; (add-to-list 'auto-mode-alist '("\\.ipl\\'" . ipl-mode))
-
 (add-to-list 'lsp-language-id-configuration '(ipl-mode . "IPL"))
 
 (lsp-register-client
