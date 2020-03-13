@@ -125,9 +125,7 @@
  (make-lsp-client
   :new-connection
   (lsp-stdio-connection
-   (lambda () ipl-path-to-language-server)
-   ;; "/Users/mattjbray/code/ai/ipl-itiviti/ipl-worker/vendor/ipl/ipl-vscode/xtext-server/bin/ipl-server"
-   )
+   (lambda () ipl-path-to-language-server))
   :major-modes '(ipl-mode)
   :server-id 'imandra-ipl-lsp
   :environment-fn (lambda ()
