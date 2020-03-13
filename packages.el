@@ -30,12 +30,7 @@
 ;;; Code:
 
 (defconst ipl-packages
-  '(
-    company
-    flycheck
-    lsp-mode
-    smartparens
-    )
+  '((ipl-mode :location local))
   "The list of Lisp packages required by the ipl layer.
 
 Each entry is either:
@@ -63,40 +58,8 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
-(defun ipl/init-lsp-mode ()
-  (use-package lsp-mode
-    :mode ("\\.ipl\\'" . ipl-mode)
-    :init
-    (progn
-      (add-to-list 'ipl-mode-hook #'lsp-mode)
-      )
-    :config
-    (progn
-      (require 'lsp-flycheck)
-      (setq lsp-print-io nil)
-      (setq lsp-document-sync-method 'full)
-      (lsp-define-stdio-client 'ipl-mode "ipl" 'stdio
-                               #'(lambda () default-directory)
-                               "Imandra Protocol Language Language Server"
-                               ipl-path-to-language-server
-                               )
-      (spacemacs/set-leader-keys-for-major-mode 'ipl-mode "gg" 'xref-find-definitions)
-      )
-    ))
-
-(defun ipl/post-init-company ()
-  ;; (spacemacs|add-company-hook ipl-mode)
-  (add-hook 'ipl-mode-hook #'company-mode)
-  )
-
-(defun ipl/post-init-flycheck ()
-  ;; (with-eval-after-load 'lsp-mode
-  ;;   (require 'lsp-flycheck))
-  (add-hook 'ipl-mode-hook #'flycheck-mode))
-
-(defun ipl/post-init-smartparens ()
-  (if dotspacemacs-smartparens-strict-mode
-      (add-hook 'ipl-mode-hook #'smartparens-strict-mode)
-    (add-hook 'ipl-mode-hook #'smartparens-mode)))
+(defun ipl/init-ipl-mode ()
+  (use-package ipl-mode
+    :mode ("\\.ipl\\'" . ipl-mode)))
 
 ;;; packages.el ends here

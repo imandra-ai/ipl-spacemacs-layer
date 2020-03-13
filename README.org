@@ -20,7 +20,7 @@ This layer adds support for the Imandra Protocol Language.
 * Install
 
 #+BEGIN_SRC bash
-git clone git@github.com:mattjbray/ipl-spacemacs-layer ~/.emacs.d/private/ipl
+git clone git@github.com:aestheticintegration/ipl-spacemacs-layer ~/.emacs.d/private/ipl
 #+END_SRC
 
 
@@ -30,6 +30,7 @@ file.
 
 #+BEGIN_SRC emacs-lisp
   (setq-default dotspacemacs-configuration-layers
-  '((ipl :variables
-         ipl-path-to-language-server "~/code/ai/ipl/fixdsl-vscode/xtext-server/bin/fixdsl-server")))
+    '((ipl :variables
+           ipl-path-to-language-server "~/code/ai/ipl/ipl-vscode/xtext-server/bin/ipl-server"
+           ipl-java-home "/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home")))
 #+END_SRC
