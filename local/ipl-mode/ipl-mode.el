@@ -114,7 +114,7 @@
     (setq comment-start-skip "//\\s *")
     (setq ipl-highlights
           `(("//.+" . font-lock-comment-face)
-            (,(regexp-opt ipl-keywords 'word) . font-lock-keyword-face)))
+            (,(regexp-opt ipl-keywords 'words) . font-lock-keyword-face)))
     (setq font-lock-defaults '(ipl-highlights))))
 
 (add-to-list 'lsp-language-id-configuration '(ipl-mode . "IPL"))
